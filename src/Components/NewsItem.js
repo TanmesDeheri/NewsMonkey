@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-export class NewsItem extends Component {
-  render() {
-    let { title, desc, imageUrl, newsUrl, author, time,source } = this.props
+import React from "react"
+import newspaper from './Newspaper.jpg'
+const NewsItem =(props)=> {
+    let { title, desc, imageUrl, newsUrl, author, time,source } = props
     return (
       <div>
-        <div className="card bg-dark text-light">
-          <img src={imageUrl} className="card-img-top" alt="Problem faced while loading " />
+        <div className="card bg-dark text-light" style={{marginBottom:'10px'}}>
+          <img src={imageUrl?imageUrl:newspaper} className="card-img-top" alt="Problem faced while loading " style={{height:'30vh'}} />
           <div className="card-body">
             <span className="badge rounded-pill bg-danger">{source}</span>
             <h5 className="card-title">{title}</h5>
@@ -17,6 +17,4 @@ export class NewsItem extends Component {
       </div>
     )
   }
-}
-
 export default NewsItem
